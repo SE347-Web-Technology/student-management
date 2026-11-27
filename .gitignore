@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+target/
+.gradle/
+build/
+dist/
+
+# Environment variables
+.env
+.env.local
+application.yml
+application-local.yml
+
+# IDE & OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,18 @@
+# [SV6] Khung Docker Compose: tự động tạo 10 bảng & nạp dữ liệu mẫu khi chạy PostgreSQL
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: se347_qlhs_postgres
+    environment:
+      POSTGRES_DB: student_management
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ../database/schema/01_init_10_core_tables.sql:/docker-entrypoint-initdb.d/01_init_10_core_tables.sql:ro
+      - ../database/seed/02_seed_sample_data.sql:/docker-entrypoint-initdb.d/02_seed_sample_data.sql:ro
+
+volumes:
+  pg_data:

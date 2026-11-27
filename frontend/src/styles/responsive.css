@@ -1,0 +1,33 @@
+/* [SV3] Responsive Media Queries hỗ trợ Tablet & Mobile */
+@media (max-width: 900px) {
+  .main-layout-sidebar {
+    position: fixed;
+    left: -280px;
+    top: var(--header-height);
+    bottom: 0;
+    z-index: 40;
+    transition: left 0.25s ease;
+  }
+
+  .main-layout-sidebar.open {
+    left: 0;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-layout-content {
+    padding: 14px !important;
+  }
+
+  .page-title {
+    font-size: 1.15rem;
+  }
+
+  .input-inline {
+    width: 100%;
+  }
+}
